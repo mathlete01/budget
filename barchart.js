@@ -8,6 +8,7 @@ var max = dataset.reduce(function (a, b) {
 var svg = d3.select("body").append("svg").attr("width", w).attr("height", h);
 
 var heightFactor = h / max;
+const fontSize = 12;
 
 function colorPicker(v) {
   if (v <= 20) {
@@ -52,9 +53,9 @@ svg
       return i * (w / dataset.length) + (w / dataset.length - padding) / 2;
     },
     y: function (d) {
-      return h - d * heightFactor + 14;
+      return h - d * heightFactor + (fontSize + 2);
     },
     "font-family": "sans-serif",
-    "font-size": 12,
+    "font-size": fontSize,
     fill: "#ffffff",
   });
